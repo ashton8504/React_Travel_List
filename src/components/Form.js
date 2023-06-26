@@ -21,6 +21,12 @@ export default function Form({ onAddItems }) {
     return (
       <form className="add-form" onSubmit={handleSubmit}>
         <h3>What do you need for your 😍 trip?</h3>
+            <input
+                type="text"
+                placeholder="Item.."
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+            />
         <select
             value={quantity}
             onChange={(e) => setQuantity(Number(e.target.value))}
@@ -31,12 +37,6 @@ export default function Form({ onAddItems }) {
             </option>
           ))}
         </select>
-            <input
-                type="text"
-                placeholder="Item.."
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-            />
         <button>Add</button>
       </form>
     );
